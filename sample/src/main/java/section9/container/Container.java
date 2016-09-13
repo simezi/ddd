@@ -23,7 +23,7 @@ public class Container {
     }
 
     boolean isSafelyPacked() {
-        return drums.stream()
+        return !drums.stream()
                 .filter(drum -> !drum.getContainerSpecification().isSatisfiedBy(this))
                 .findAny()
                 .isPresent();
